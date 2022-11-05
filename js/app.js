@@ -663,7 +663,7 @@ $('.action_form').on('submit', function (event) {
     
     $.ajax({
         url: '../send.php',
-        type: 'POST',
+        type: 'GET',
         data: data,
         cache: false,
         dataType: 'json',
