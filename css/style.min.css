@@ -7039,7 +7039,9 @@ input:checked~.policy__check img {
   background: #fff;
   z-index: 99
 }
-
+.header.is-fixed .header__inner {
+  padding-bottom: 0 !important;
+}
 @media (max-width:767px) {
 .widget-menu {
   top: 10rem;

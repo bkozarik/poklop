@@ -631,102 +631,168 @@ function topFunction() {
     $('body,html').animate({ scrollTop: 0 }, 100);
 }
 
-//AJAX
+// //AJAX
 
-var nForm = false;
-$(function() {
-    'use strict';
-    var action = $('.ajax-url').val();
-    $('form').on('submit', function(e) {
-        e.preventDefault();
-        var formThis = $(this);
-        var fd = new FormData(this);
+$('.action_form').on('submit', function (event) {
 
-        formThis.find('.btn').attr({
-            'disabled': 'true'
-        });
+    event.stopPropagation();
+    event.preventDefault();
+  
+    let form = this,
+        submit = $('.submit', form),
+        data = new FormData(),
+        files = $('input[type=file]')
+  
+  
+    $('.submit', form).val('Sending...');
 
-
-        if (formThis.find('input[name="formname"]').val() === "price") {
-            var link = document.createElement('a');
-            link.setAttribute('href', $('.price-pdf').val());
-            link.setAttribute('target', "_blank");
-            link.setAttribute('download', '');
-
-            if (navigator.userAgent.indexOf('Mac') > 0) {
-                window.open($('.price-pdf').val(), '_blank');
-            } else {
-                simulate(link, "click");
+    data.append( "Phone", 		$('[name="phone"]', form).val() );
+    
+    
+    // data.append( 'file', 		$('[name="file"]', form).val() );
+   
+  
+    // files.each(function (key, file) {
+    //     let cont = file.files;
+    //     if ( cont ) {
+    //         $.each( cont, function( key, value ) {
+    //             data.append( key, value );
+    //         });
+    //     }
+    // });
+    
+    $.ajax({
+        url: '../send.php',
+        type: 'POST',
+        data: data,
+        cache: false,
+        dataType: 'json',
+        processData: false,
+        contentType: false,
+        xhr: function() {
+            let myXhr = $.ajaxSettings.xhr();
+  
+            if ( myXhr.upload ) {
+                myXhr.upload.addEventListener( 'progress', function(e) {
+                    if ( e.lengthComputable ) {
+                        let percentage = ( e.loaded / e.total ) * 100;
+                            percentage = percentage.toFixed(0);
+                        $('.submit', form)
+                            .html( percentage + '%' );
+                    }
+                }, false );
             }
-
-            $(".modal-overlay").fadeOut();
-            window.location.href = $('.thank-url').val();
-
-        } else if (formThis.find('input[name="formname"]').val() === "useful-pdf") {
-            var link = document.createElement('a');
-            link.setAttribute('href', $('.useful-pdf').val());
-            link.setAttribute('target', "_blank");
-            link.setAttribute('download', '');
-
-            if (navigator.userAgent.indexOf('Mac') > 0) {
-                window.open($('.useful-pdf').val(), '_blank');
-            } else {
-                simulate(link, "click");
-            }
-
-            $(".modal-overlay").fadeOut();
-            window.location.href = $('.thank-url').val();
-        } else if (formThis.find('input[name="formname"]').val() === "pdf") {
-            var link = document.createElement('a');
-            link.setAttribute('href', $('.pdf-pdf').val());
-            link.setAttribute('target', "_blank");
-            link.setAttribute('download', '');
-
-            if (navigator.userAgent.indexOf('Mac') > 0) {
-                window.open($('.pdf-pdf').val(), '_blank');
-            } else {
-                simulate(link, "click");
-            }
-
-            $(".modal-overlay").fadeOut();
-            window.location.href = $('.thank-url').val();
-
-        } else if (formThis.find('input[name="formname"]').val() === "test") {
-
-
-            formThis.find('input').attr({
-                'disabled': 'true',
-            });
-            formThis.find('button').attr({
-                'disabled': 'true',
-            });
-
-            $(".modal-overlay").fadeOut();
-        } else {
-            $(".modal-overlay").fadeOut();
-
-
+  
+            return myXhr;
+        },
+        error: function( jqXHR, textStatus ) {
+            
+        },
+        complete: function() {
+            $('.sended').fadeIn();
+            
+            console.log('Complete')
+            form.reset() 
         }
-
-        formThis.find('.btn').removeAttr('disabled');
-        $('form').trigger('reset');
-
-
-        $.ajax({
-            // url: action,
-            url: 'api/main.php',
-            type: 'POST',
-            contentType: false,
-            processData: false,
-            data: fd,
-            success: function(msg) {
-                ym(90200723, 'reachGoal', 'Cel_all');
-                window.location.href = $('.thank-url').val();
-            },
-
-        });
     });
-});
+  
+    return false;
+  });
+
+// var nForm = false;
+// $(function() {
+//     'use strict';
+//     var action = $('.ajax-url').val();
+//     $('form').on('submit', function(e) {
+//         e.preventDefault();
+//         var formThis = $(this);
+//         var fd = new FormData(this);
+
+//         formThis.find('.btn').attr({
+//             'disabled': 'true'
+//         });
+
+
+//         if (formThis.find('input[name="formname"]').val() === "price") {
+//             var link = document.createElement('a');
+//             link.setAttribute('href', $('.price-pdf').val());
+//             link.setAttribute('target', "_blank");
+//             link.setAttribute('download', '');
+
+//             if (navigator.userAgent.indexOf('Mac') > 0) {
+//                 window.open($('.price-pdf').val(), '_blank');
+//             } else {
+//                 simulate(link, "click");
+//             }
+
+//             $(".modal-overlay").fadeOut();
+//             window.location.href = $('.thank-url').val();
+
+//         } else if (formThis.find('input[name="formname"]').val() === "useful-pdf") {
+//             var link = document.createElement('a');
+//             link.setAttribute('href', $('.useful-pdf').val());
+//             link.setAttribute('target', "_blank");
+//             link.setAttribute('download', '');
+
+//             if (navigator.userAgent.indexOf('Mac') > 0) {
+//                 window.open($('.useful-pdf').val(), '_blank');
+//             } else {
+//                 simulate(link, "click");
+//             }
+
+//             $(".modal-overlay").fadeOut();
+//             window.location.href = $('.thank-url').val();
+//         } else if (formThis.find('input[name="formname"]').val() === "pdf") {
+//             var link = document.createElement('a');
+//             link.setAttribute('href', $('.pdf-pdf').val());
+//             link.setAttribute('target', "_blank");
+//             link.setAttribute('download', '');
+
+//             if (navigator.userAgent.indexOf('Mac') > 0) {
+//                 window.open($('.pdf-pdf').val(), '_blank');
+//             } else {
+//                 simulate(link, "click");
+//             }
+
+//             $(".modal-overlay").fadeOut();
+//             window.location.href = $('.thank-url').val();
+
+//         } else if (formThis.find('input[name="formname"]').val() === "test") {
+
+
+//             formThis.find('input').attr({
+//                 'disabled': 'true',
+//             });
+//             formThis.find('button').attr({
+//                 'disabled': 'true',
+//             });
+
+//             $(".modal-overlay").fadeOut();
+//         } else {
+//             $(".modal-overlay").fadeOut();
+
+
+//         }
+
+//         formThis.find('.btn').removeAttr('disabled');
+//         $('form').trigger('reset');
+
+
+//         $.ajax({
+//             // url: action,
+//             url: 'api/main.php',
+//             type: 'POST',
+//             contentType: false,
+//             processData: false,
+//             data: fd,
+//             success: function(msg) {
+//                 ym(90200723, 'reachGoal', 'Cel_all');
+//                 window.location.href = $('.thank-url').val();
+//             },
+
+//         });
+//     });
+// });
 
 
 // ---------------------
