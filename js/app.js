@@ -186,55 +186,9 @@ $('.product-item').each(function() {
     });
 });
 
-const teamSlider = $('.team-slider');
-const teamNav = $('.team-navs');
-teamSlider.slick({
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    asNavFor: teamNav,
-    arrows: true,
-    fade: true,
-    cssEase: 'linear',
-    prevArrow: '<button class="slick-prev slick-arrow"><svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="31.5" transform="rotate(-180 32 32)" stroke="#CFCFCF"/><path opacity="0.25" fill-rule="evenodd" clip-rule="evenodd" d="M27.1623 31.9437L34.8988 24.0942L36.0846 25.2801L29.4776 32.0001L36.1411 38.7201L34.9552 39.906L27.1058 32.0001L27.1623 31.9437Z" fill="#1C1C1C"/></svg></button>',
-    nextArrow: '<button class="slick-next slick-arrow"><svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="31.5" stroke="#CFCFCF"/><path opacity="0.25" fill-rule="evenodd" clip-rule="evenodd" d="M36.8377 32.0563L29.1012 39.9058L27.9154 38.7199L34.5224 31.9999L27.8589 25.2799L29.0448 24.094L36.8942 31.9999L36.8377 32.0563Z" fill="#1C1C1C"/></svg></button>',
-});
 
-teamNav.slick({
-    infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    asNavFor: teamSlider,
-    arrows: true,
-    focusOnSelect: true,
-    prevArrow: '<button class="slick-prev slick-arrow"><svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="31.5" transform="rotate(-180 32 32)" stroke="#CFCFCF"/><path opacity="0.25" fill-rule="evenodd" clip-rule="evenodd" d="M27.1623 31.9437L34.8988 24.0942L36.0846 25.2801L29.4776 32.0001L36.1411 38.7201L34.9552 39.906L27.1058 32.0001L27.1623 31.9437Z" fill="#1C1C1C"/></svg></button>',
-    nextArrow: '<button class="slick-next slick-arrow"><svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="31.5" stroke="#CFCFCF"/><path opacity="0.25" fill-rule="evenodd" clip-rule="evenodd" d="M36.8377 32.0563L29.1012 39.9058L27.9154 38.7199L34.5224 31.9999L27.8589 25.2799L29.0448 24.094L36.8942 31.9999L36.8377 32.0563Z" fill="#1C1C1C"/></svg></button>',
-    responsive: [{
-        breakpoint: 768,
-        settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: false,
-            dots: true
-        }
-    }]
-});
 
-$('.create-slider').slick({
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: true,
-    dots: true,
-    prevArrow: '<div class="slick-prev slick-arrow"><svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.25" fill-rule="evenodd" clip-rule="evenodd" d="M0.16229 7.94365L7.89876 0.0942383L9.08464 1.28012L2.47758 8.00012L9.14111 14.7201L7.95523 15.906L0.105819 8.00012L0.16229 7.94365Z" fill="#1C1C1C"/></svg></div>',
-    nextArrow: '<div class="slick-next slick-arrow"><svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.25" fill-rule="evenodd" clip-rule="evenodd" d="M9.83771 8.05635L2.10124 15.9058L0.915357 14.7199L7.52242 7.99988L0.858886 1.27988L2.04477 0.093996L9.89418 7.99988L9.83771 8.05635Z" fill="#1C1C1C"/></svg></div>',
-    responsive: [{
-        breakpoint: 768,
-        settings: {
-            arrows: false
-        }
-    }]
-});
+
 
 $('.reviews-slider').slick({
     infinite: true,
@@ -268,25 +222,7 @@ $('.reviews-phone').slick({
     }]
 });
 
-$('.modal-slider').slick({
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: true,
-    dots: false,
-    prevArrow: '<div class="slick-prev slick-arrow"><svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.25" fill-rule="evenodd" clip-rule="evenodd" d="M0.16229 7.94365L7.89876 0.0942383L9.08464 1.28012L2.47758 8.00012L9.14111 14.7201L7.95523 15.906L0.105819 8.00012L0.16229 7.94365Z" fill="#1C1C1C"/></svg></div>',
-    nextArrow: '<div class="slick-next slick-arrow"><svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.25" fill-rule="evenodd" clip-rule="evenodd" d="M9.83771 8.05635L2.10124 15.9058L0.915357 14.7199L7.52242 7.99988L0.858886 1.27988L2.04477 0.093996L9.89418 7.99988L9.83771 8.05635Z" fill="#1C1C1C"/></svg></div>'
-});
 
-$('.cases-item__slider').slick({
-    infinite: false,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: true,
-    dots: true,
-    prevArrow: '<button class="slick-prev slick-arrow"><svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.16229 7.94316L7.89876 0.0937501L9.08464 1.27963L2.47758 7.99963L9.14111 14.7196L7.95523 15.9055L0.105819 7.99963L0.16229 7.94316Z" fill="white"/></svg></button>',
-    nextArrow: '<button class="slick-next slick-arrow"><svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.83771 8.05684L2.10124 15.9062L0.915357 14.7204L7.52242 8.00037L0.858886 1.28037L2.04477 0.0944843L9.89418 8.00037L9.83771 8.05684Z" fill="white"/></svg></button>'
-});
 
 /* $('.youtube-preview').each(function() {
     let reviewLink = $(this).attr('href');
@@ -304,135 +240,14 @@ $('.cases-item__slider').slick({
 
 }); */
 
-$('.product-more-btn').on('click', function() {
-    const cases = $(this).closest('.product-tab').find('.product-item');
-    cases.fadeIn();
 
-    $(this).toggleClass('active');
-    if ($(this).hasClass('active')) {
-        $(this).find('span').text('Скрыть');
-    } else {
-        cases.hide();
-        cases.eq(0).fadeIn();
-        cases.eq(1).fadeIn();
-        cases.eq(2).fadeIn();
-        cases.eq(3).fadeIn();
-        $(this).find('span').text('Смотреть еще');
-        var elem = $('.assortment-btns-wrapper');
-        var top = elem.offset().top - 15;
-        $('body,html').animate({ scrollTop: top }, 400);
-    }
 
-    cases.each(function() {
-        const slider = $(this).find('.product-slider');
-
-        slider.slick('resize');
-        slider.slick('setPosition');
-
-        setTimeout(function() {
-            slider.slick('resize');
-            slider.slick('setPosition');
-        }, 500);
-    });
-});
-
-$('.assortment-btn').on('click', function() {
-    $('.assortment-btn').removeClass('is-active');
-    $(this).addClass('is-active');
-    $('.product-tab').hide();
-    $('.product-tab').eq($(this).index()).fadeIn();
-
-    $('.product-tab').eq($(this).index()).each(function() {
-        const slider = $(this).find('.product-slider');
-
-        slider.slick('resize');
-        slider.slick('setPosition');
-
-        setTimeout(function() {
-            slider.slick('resize');
-            slider.slick('setPosition');
-        }, 500);
-
-    });
-});
-
-$('.cases-more-btn').on('click', function() {
-    const cases = $(this).closest('.cases-tab').find('.cases-item');
-    cases.fadeIn();
-
-    $(this).toggleClass('active');
-    if ($(this).hasClass('active')) {
-        $(this).find('span').text('Скрыть');
-    } else {
-        cases.hide();
-        cases.eq(0).fadeIn();
-        cases.eq(1).fadeIn();
-        cases.eq(2).fadeIn();
-        cases.eq(3).fadeIn();
-        cases.eq(4).fadeIn();
-        cases.eq(5).fadeIn();
-        $(this).find('span').text('Смотреть больше объектов');
-        var elem = $('.cases-btns-wrapper');
-        var top = elem.offset().top - 15;
-        $('body,html').animate({ scrollTop: top }, 400);
-    }
-
-    cases.each(function() {
-        const slider = $(this).find('.cases-item__slider');
-
-        slider.slick('resize');
-        slider.slick('setPosition');
-
-        setTimeout(function() {
-            slider.slick('resize');
-            slider.slick('setPosition');
-        }, 500);
-    });
-});
-
-$('.cases-btn').on('click', function() {
-    $('.cases-btn').removeClass('is-active');
-    $(this).addClass('is-active');
-    $('.cases-tab').hide();
-    $('.cases-tab').eq($(this).index()).fadeIn();
-
-    $('.cases-tab').eq($(this).index()).each(function() {
-        const slider = $(this).find('.cases-item__slider');
-
-        slider.slick('resize');
-        slider.slick('setPosition');
-
-        setTimeout(function() {
-            slider.slick('resize');
-            slider.slick('setPosition');
-        }, 500);
-
-    });
-});
 
 
 $('.faq__item').on('click', function() {
     $(this).toggleClass('active');
 });
 
-$('.team-btn').on('click', function() {
-    $('.team-btn').removeClass('active');
-    $(this).addClass('active');
-    $('.team-tab').hide();
-    $('.team-tab').eq($(this).index()).fadeIn();
-    $('.team-tab').eq($(this).index()).find('.team-slider').slick('resize');
-});
-
-/* SEO */
-$('.seo__btn').on('click', function() {
-    $(this).toggleClass('active');
-    if ($(this).hasClass('active')) {
-        $(this).text('Скрыть');
-    } else {
-        $(this).text('Читать полностью');
-    }
-    $('.seo__text').toggleClass('active');
-});
 
 /* Modals */
 $('.js-btn').on('click', function(e) {
@@ -493,52 +308,6 @@ function anime(anim) {
 
 /* Phone mask */
 $('input[name="phone"]').mask('+420(999)999-999');
-
-/* Quiz */
-/* Quiz */
-var number = 0;
-var maxNumber = $(".quiz-item").length;
-var $element = $(".quiz-item").find("input, select, textarea");
-var btnPrev = $(".quiz-btn--prev");
-var btnNext = $('.quiz-btn--next');
-var isValid;
-var dataBlock;
-var activeSlide = [];
-var qw3widthNum = $('#qw3-num');
-var qw3widthSlider = $('#qw3-slider');
-var qw4widthNum = $('#qw4-num');
-var qw4widthSlider = $('#qw4-slider');
-
-qw3widthSlider.on('change', function() {
-    qw3widthNum.val(qw3widthSlider.val());
-});
-
-qw4widthSlider.on('change', function() {
-    qw4widthNum.val(qw4widthSlider.val());
-});
-
-$element.on('change input', function(e) {
-    var value = $(this).val().trim();
-    isValid = value !== "";
-    btnActive(!isValid);
-});
-
-function btnActive(isValid) {
-
-    if (number === 0) {
-        btnPrev.prop('disabled', 'false');
-        btnNext.prop('disabled', isValid);
-    } else {
-        btnPrev.prop('disabled', false);
-        if (activeSlide[number] === true || isValid === false) {
-            btnNext.prop('disabled', false);
-        } else {
-            btnNext.prop('disabled', true);
-        }
-    }
-}
-
-
 
 // btn
 function btnClick() {
@@ -648,18 +417,6 @@ $('.action_form').on('submit', function (event) {
 
     data.append( "Phone", 		$('[name="phone"]', form).val() );
     
-    
-    // data.append( 'file', 		$('[name="file"]', form).val() );
-   
-  
-    // files.each(function (key, file) {
-    //     let cont = file.files;
-    //     if ( cont ) {
-    //         $.each( cont, function( key, value ) {
-    //             data.append( key, value );
-    //         });
-    //     }
-    // });
     
     $.ajax({
         url: '../send.php',
@@ -850,47 +607,6 @@ var defaultOptions = {
     cancelable: true
 }
 
-$('input[name="quiz1[]"]').on('change', function() {
-    setTimeout(function() {
-        ym(90200723, 'reachGoal', 'quiz_start');
-        ym(90200723, 'reachGoal', 'quiz_1');
-    }, 500);
-});
-$('input[name="qw2num"], input[name="my_range"]').on('change', function() {
-    setTimeout(function() {
-        ym(90200723, 'reachGoal', 'quiz_2');
-    }, 500);
-});
-$('input[name="quiz3"]').on('change', function() {
-    setTimeout(function() {
-        ym(90200723, 'reachGoal', 'quiz_3');
-        btnNext.click();
-    }, 500);
-});
-$('input[name="quiz4[]"]').on('change', function() {
-    setTimeout(function() {
-        ym(90200723, 'reachGoal', 'quiz_4')
-        btnNext.click();
-    }, 500);
-});
-$('input[name="quiz5"]').on('change', function() {
-    setTimeout(function() {
-        ym(90200723, 'reachGoal', 'quiz_5')
-        ym(90200723, 'reachGoal', 'quiz_complete')
-        btnNext.click();
-    }, 500);
-});
-// $('input[name="quiz6"]').on('change', function() {
-//     setTimeout(function() {
-//         ym(90200723, 'reachGoal', 'quiz_6')
-//     }, 500);
-// });
-// $('input[name="quiz7"]').on('change', function() {
-//     setTimeout(function() {
-//         ym(90200723, 'reachGoal', 'quiz_7')
-//         ym(90200723, 'reachGoal', 'quiz_complete')
-//     }, 500);
-// });
 
 $('.widget-video__close').on('click', function(e) {
     e.preventDefault();
@@ -899,107 +615,14 @@ $('.widget-video__close').on('click', function(e) {
 });
 
 /* Cookie */
-var cookiesTest2 = get_cookie("test2");
-if (cookiesTest2 !== '' && cookiesTest2 !== null) {
-    // return false;
-} else {
-    $(document).mouseleave(function(event) {
-        event = event || window.event;
-        if (event.clientY < 0 || event.clientY < 3) {
-            if (!closeMod3) {
-
-                $('html').addClass('stop');
-                $('#modal-wait').fadeIn();
-
-
-                closeMod3 = true;
-
-
-                var date2 = new Date();
-                date2.setDate(date2.getDate() + 7);
-                date2 = date2.toUTCString();
-                document.cookie = "test2=1;expires=" + date2;
-            }
-
-        }
-    });
-
-}
-var cookiesTest1 = get_cookie("test1");
-if (cookiesTest1 !== '' && cookiesTest1 !== null) {
-    // return false;
-} else {
-    var closeMod1 = false;
-    var closeMod2 = false;
-    var closeMod3 = false;
-
-    if (!closeMod1) {
-
-        $('#modal-cookies').fadeIn();
-
-
-        closeMod1 = true;
-
-
-        var date1 = new Date();
-        date1.setDate(date1.getDate() + 7);
-        date1 = date1.toUTCString();
-        document.cookie = "test1=1;expires=" + date1;
-    }
-}
-
-function get_cookie(cookie_name) {
-    var results = document.cookie.match('(^|;) ?' + cookie_name + '=([^;]*)(;|$)');
-
-    if (results)
-        return (unescape(results[2]));
-    else
-        return null;
-}
 
 $('.case-close').on('click', function(e) {
     e.preventDefault();
     window.history.go(-1);
 });
 
-const yesterday = new Date();
-yesterday.setDate(yesterday.getDate() - 1);
-
-function padTo2Digits(num) {
-    return num.toString().padStart(2, '0');
-}
-
-function formatDate(date) {
-    return [
-        padTo2Digits(date.getDate()),
-        padTo2Digits(date.getMonth() + 1),
-    ].join('.');
-}
 
 
 $('[data-fancybox]').fancybox({
     backFocus: false,
 });
-
-jQuery(function() {
-    let getUrlParams = window
-        .location
-        .search
-        .replace('?', '')
-        .split('&')
-        .reduce(
-            function(p, e) {
-                var a = e.split('=');
-                p[decodeURIComponent(a[0])] = decodeURIComponent(a[1]);
-                return p;
-            }, {}
-        );
-
-    $('form input[name="utm_source"]').val(getUrlParams['utm_source']);
-    $('form input[name="utm_medium"]').val(getUrlParams['utm_medium']);
-    $('form input[name="utm_campaign"]').val(getUrlParams['utm_campaign']);
-    $('form input[name="utm_content"]').val(getUrlParams['utm_content']);
-    $('form input[name="utm_term"]').val(getUrlParams['utm_term']);
-    $('form input[name="yclid"]').val(getUrlParams['yclid']);
-
-})
